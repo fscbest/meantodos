@@ -1,0 +1,59 @@
+.idea
+typings/**
+node_modules
+jspm_packages
+link-checker-results.txt
+**/*npm-debug.log.*
+*.js.map
+e2e/**/*.js
+e2e/**/*.js.map
+_test-output
+_temp
+
+!karma*.js
+!protractor*.js
+!systemjs.config.js
+!typings/typings.d.ts
+!wallaby.js
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
+
+src/*/*.js
+*.map
+
+*.component.js
+*.component.spec.js
+*.service.js
+*.service.spec.js

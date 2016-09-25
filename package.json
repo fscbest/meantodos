@@ -1,0 +1,25 @@
+{
+  "name": "meantodos",
+  "version": "1.0.0",
+  "description": "ToDo backend server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fscbest/meantodos.git"
+  },
+  "author": "RomanG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fscbest/meantodos/issues"
+  },
+  "homepage": "https://github.com/fscbest/meantodos#readme",
+  "dependencies":{
+    "body-parser":"*",
+    "ejs":"*",
+    "express":"*",
+    "mongojs":"*"
+  }
+}
