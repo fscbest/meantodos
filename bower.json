@@ -1,0 +1,20 @@
+{
+  "name": "meantodos",
+  "description": "Simple todos",
+  "main": "server.js",
+  "authors": [
+    "RomanG"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fscbest/meantodos",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
