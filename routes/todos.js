@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 var db = mongojs('mongodb://roman:roman@ds041566.mlab.com:41566/meanstodosapp',['todos']);
-var isOnWork = true;
+var isOnWork = false;
 
 //Get all todos
 router.get('/todos', function(req, res, next){
@@ -59,7 +59,7 @@ router.post('/todo', function(req, res, next){
 });
 
 //Update todo
-router.put('/todo/:id', function(req, rest, next){
+router.put('/todo/:id', function(req, res, next){
 	var todo = req.body;
 	var updObj = {};
 

@@ -36,4 +36,18 @@ export class TodosComponent implements OnInit{
             })
         }
     }
+
+    updateStatus(todo){
+        var _todo = {
+            _id: todo._id,
+            text: todo.text,
+            isCompleted: !todo.isCompleted
+        };
+
+        this._todoService.updateTodo(_todo)
+        .map(res => res.json())
+        .subscribe(data => {
+            todo.isCompleted = !todo.isCompleted;
+        });
+    }
 }
