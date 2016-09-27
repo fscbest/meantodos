@@ -13,4 +13,11 @@ export class TodoService {
     getTodos(){
         return this._http.get('/api/v1/todos');
     }
+
+    saveTodo(todo){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post('/api/v1/todo', JSON.stringify(todo),{headers: headers})
+            .map(res => res.json());
+    }
 }

@@ -36,21 +36,25 @@ router.get('/todo/:id', function(req, res, next){
 });
 
 //Save todo
-router.post('/todo', function(req, rest, next){
-	var todo = req.body;
-	if(!todo.text || !(todo.isCompleted + '')){
-		res.status(400);
-		res.json({
-			"error":"Invalid Data"
-		});
+router.post('/todo', function(req, res, next){
+	if(!isOnWork) {
+		var todo = req.body;
+		if (!todo.text || !(todo.isCompleted + '')) {
+			res.status(400);
+			res.json({
+				"error": "Invalid Data"
+			});
+		} else {
+			db.todos.save(todo, function (err, result) {
+				if (err) {
+					res.send(err);
+				} else {
+					res.json(result);
+				}
+			});
+		}
 	} else {
-		db.todos.save(todo, function(err, result){
-			if(err){
-				res.send(err);
-			} else {
-				res.json(result);
-			}
-		});
+		res.json({"_id":"57e8f042dcba0f56wee386f3","text":"New one.","isCompleted":false});
 	}
 });
 

@@ -3,9 +3,8 @@
         <h1>Add Todo</h1>
         <div class="form-group">
             <input class="form-control input-lg" placeholder="Add Todo..." autofocus #todoText/>
-            <!--<input type="text" name="searchStr" [(ngModel)]="searchStr" (keyup)="searchMusic()" class="form-control input-lg" placeholder="Add Todo..."/>-->
             <br>
-            <button class="btn btn-primary btn-block">Create</button>
+            <button (click)="addTodo($event, todoText)" class="btn btn-primary btn-block">Create</button>
         </div>
     </div>
 
