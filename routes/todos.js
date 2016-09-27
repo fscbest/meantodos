@@ -2,16 +2,23 @@ var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 var db = mongojs('mongodb://roman:roman@ds041566.mlab.com:41566/meanstodosapp',['todos']);
+var isOnWork = true;
 
 //Get all todos
 router.get('/todos', function(req, res, next){
-	db.todos.find(function(err, todos){
-		if(err){
-			res.send(err);
-		} else {
-			res.json(todos);
-		}
-	});
+	console.log("todos router todos path. isOnWork = ");
+	if(!isOnWork){
+		db.todos.find(function(err, todos){
+			if(err){
+				res.send(err);
+			} else {
+				res.json(todos);
+			}
+		});
+	} else {
+		res.json([{"_id":"57e8f042dcba0f568ee386f3","text":"Go out to dinner.","isCompleted":false},{"_id":"57e8f08bdcba0f568ee386ff","text":"Goo food shopping","isCompleted":false},{"_id":"57e8f0a0dcba0f568ee3870f","text":"Meeting at isOnWork","isCompleted":false}]);
+	}
+
 });
 
 
